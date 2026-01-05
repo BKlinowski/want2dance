@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:want2dance/widgets/choreo_style_widget.dart';
+import 'package:want2dance/widgets/choreo_card_widget.dart';
 
 class ChoreoMainScreen extends StatelessWidget {
   @override

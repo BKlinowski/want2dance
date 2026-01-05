@@ -9,7 +9,7 @@ class AppScreen {
   });
 
   final Widget screen;
-  final Icon icon;
+  final ImageIcon icon;
   final String label;
   final String route;
 }
