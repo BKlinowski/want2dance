@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:want2dance/widgets/choreo_card_widget.dart';
+import 'package:want2dance/models/dance_style.dart';
+import 'package:want2dance/widgets/choreo_widget.dart';
 
 class ChoreoScreen extends StatefulWidget {
-  const ChoreoScreen({super.key, required this.choreos});
-  final List<ChoreoStyleWidget> choreos;
+  const ChoreoScreen({super.key, required this.danceCategory});
+  final DanceCategory danceCategory;
 
   @override
   State<ChoreoScreen> createState() {
@@ -12,25 +13,28 @@ class ChoreoScreen extends StatefulWidget {
 }
 
 class _ChoreScreenState extends State<ChoreoScreen> {
-  late List<ChoreoStyleWidget> choreos;
-
-  @override
-  void initState() {
-    super.initState();
-    choreos = List.of(widget.choreos);
+  void _onChoreoClick(int choreoId) {
+    //switch screen to choreo
   }
 
   @override
   Widget build(BuildContext context) {
+    List<ChoreoWidget> choreos = [
+      ChoreoWidget(choreoName: "Samba", onChoreoClick: () => _onChoreoClick(1)),
+      ChoreoWidget(
+        choreoName: "Cha-cha",
+        onChoreoClick: () => _onChoreoClick(2),
+      ),
+    ];
     return ReorderableListView.builder(
       itemBuilder: (context, index) {
         return choreos[index];
       },
-      itemCount: widget.choreos.length,
+      itemCount: choreos.length,
       onReorder: (oldIndex, newIndex) {
         setState(() {
           if (oldIndex < newIndex) newIndex--;
-          final ChoreoStyleWidget choreo = choreos.removeAt(oldIndex);
+          final ChoreoWidget choreo = choreos.removeAt(oldIndex);
           choreos.insert(newIndex, choreo);
         });
       },

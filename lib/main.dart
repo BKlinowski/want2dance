@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:want2dance/navigation/routes.dart';
 import 'package:want2dance/screens/home_screen.dart';
 
 final theme = ThemeData(
@@ -10,5 +11,5 @@ final theme = ThemeData(
   textTheme: GoogleFonts.latoTextTheme(),
 );
 void main() {
-  runApp(MaterialApp(theme: theme, home: HomeScreen()));
+  runApp(MaterialApp.router(theme: theme, routerConfig: router));
 }

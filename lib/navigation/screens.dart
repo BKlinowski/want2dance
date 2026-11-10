@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:want2dance/models/app_screen.dart';
-import 'package:want2dance/screens/choreo_main_screen.dart';
+import 'package:want2dance/screens/style_screen.dart';
 
 final List<AppScreen> appScreens = [
   AppScreen(
-    screen: ChoreoMainScreen(),
+    screen: StyleScreen(),
     icon: ImageIcon(AssetImage('assets/icons/choreo.png')),
     label: 'Choreo',
     route: '/choreo',

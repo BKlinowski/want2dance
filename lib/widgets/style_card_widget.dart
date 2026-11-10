@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:want2dance/utils/custom_clipper.dart';
 
-class ChoreoStyleWidget extends StatelessWidget {
-  const ChoreoStyleWidget({
+class StyleCardWidget extends StatelessWidget {
+  const StyleCardWidget({
     super.key,
     required this.title,
     required this.icon,
     required this.gradientColors,
+    required this.onStyleClick,
   });
 
   final String title;
   final ImageIcon icon;
   final List<Color> gradientColors;
+  final void Function() onStyleClick;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class ChoreoStyleWidget extends StatelessWidget {
         elevation: 10,
         child: InkWell(
           splashColor: Colors.white.withValues(alpha: 0.2),
-          onTap: () {},
+          onTap: onStyleClick,
           child: Container(
             width: double.infinity,
             decoration: BoxDecoration(
